@@ -170,4 +170,5 @@ galaxy_info:
     # alphanumeric characters. Maximum 20 tags per role.
 
 dependencies:
-  - geerlingguy.apache-fastcgi-php
+  - geerlingguy.apache-php-fpm
+  - geerlingguy.mysql

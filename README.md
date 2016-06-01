@@ -19,7 +19,8 @@ You need to setup the next variables:
 Dependencies
 ------------
 
-- geerlingguy.apache-fastcgi-php
+- geerlingguy.apache-php-fpm
+- geerlingguy.mysql
 
 Example Playbook
 ----------------
