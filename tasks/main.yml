@@ -1,0 +1,24 @@
+---
+# tasks file for kporras07.teampass
+
+- name: Teampass | Clone repository
+  action: git repo=https://github.com/nilsteampassnet/TeamPass.git dest=/var/www/teampass accept_hostkey=yes
+
+- name: Teampass | Fix permissions
+  action: file path=/var/www/teampass owner=www-data group=www-data recurse=yes
+
+- name: Teampass | Copy apache vhost file
+  action: copy src=teampass.conf dest=/etc/apache2/sites-available/teampass.conf mode=644
+  notify:
+    - restart apache
+
+- name: Teampass | Enable vhost
+  action: command a2ensite teampass creates=/etc/apache2/sites-enabled/teampass.conf
+  notify:
+    - restart apache
+
+- name: Teampass | Create database
+  action: mysql_db name={{ teampass_db }} state=present
+
+- name: Teampass | Create user
+  action: mysql_user name={{ teampass_db_user }} password={{ teampass_db_password }} priv={{ teampass_db }}.*:ALL state=present

@@ -1,0 +1,5 @@
+---
+# defaults file for kporras07.teampass
+teampass_db: "teampass_db"
+teampass_db_user: "teampass_user"
+teampass_db_password: "teampass"

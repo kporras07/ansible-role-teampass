@@ -1,0 +1,19 @@
+---
+# vars file for kporras07.teampass
+php_memory_limit: "128M"
+php_max_execution_time: "120"
+php_packages:
+  - php5.6
+  - php5.6-cli
+  - php5.6-common
+  - php5.6-mysql
+  - php5.6-mcrypt
+  - php5.6-json
+  - php5.6-gd
+  - php5.6-mbstring
+  - php5.6-xml
+  - php5.6-bcmath
+  - php-mysqlnd-ms
+php_conf_paths:
+  - /etc/php/5.6/apache2
+  - /etc/php/5.6/cli
