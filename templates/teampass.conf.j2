@@ -2,7 +2,7 @@ DirectoryIndex index.php index.html
 
 
 <VirtualHost *:80>
-  ServerName teampass.manati.vpn
+  ServerName {{ teampass_server_name }}
   DocumentRoot /var/www/teampass
 
   <Directory "/var/www/teampass">

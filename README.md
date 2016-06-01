@@ -15,6 +15,7 @@ You need to setup the next variables:
  - teampass_db
  - teampass_db_user
  - teampass_db_password
+ - teampass_server_name
 
 Dependencies
 ------------
@@ -36,6 +37,7 @@ Inside _vars/main.yml_:
     - teampass_db: "teampass_db"
     - teampass_db_user: "teampass_user"
     - teampass_db_password: "teampass"
+    - teampass_server_name: "teampass.mycompany.com"
 
 Besides that, you need to ensure to have the next configuration for geerlinguy.php role:
 

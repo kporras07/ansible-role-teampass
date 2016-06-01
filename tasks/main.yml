@@ -8,7 +8,7 @@
   action: file path=/var/www/teampass owner=www-data group=www-data recurse=yes
 
 - name: Teampass | Copy apache vhost file
-  action: copy src=teampass.conf dest=/etc/apache2/sites-available/teampass.conf mode=644
+  action: template src=teampass.conf.j2 dest=/etc/apache2/sites-available/teampass.conf mode=644
   notify:
     - restart apache
 
