@@ -1,11 +1,17 @@
 ---
 # tasks file for kporras07.teampass
 
+- name: Teampass | Register repo existence
+  action: stat path=/var/www/teampass
+  register: repo
+
 - name: Teampass | Clone repository
   action: git repo=https://github.com/nilsteampassnet/TeamPass.git dest=/var/www/teampass accept_hostkey=yes
+  when: repo.stat.exists == False
 
 - name: Teampass | Fix permissions
   action: file path=/var/www/teampass owner=www-data group=www-data recurse=yes
+  when: repo.stat.exists == False
 
 - name: Teampass | Copy apache vhost file
   action: template src=teampass.conf.j2 dest=/etc/apache2/sites-available/teampass.conf mode=644
