@@ -19,7 +19,9 @@ install:
   - ansible --version
 
   # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - printf '[defaults]\nroles_path=/home/travis/build/kporras07/' > ~/.ansible.cfg
+  - ln -s /home/travis/build/kporras07/ansible-role-teampass /home/travis/build/kporras07/kporras07.teampass
+  - ansible-galaxy install -r tests/requirements.yml --force
 
 script:
   # Basic role syntax check
