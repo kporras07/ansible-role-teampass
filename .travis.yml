@@ -19,7 +19,7 @@ install:
   - ansible --version
 
   # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../../' > tests/ansible.cfg
+  - printf '[defaults]\nroles_path=/home/travis/build/kporras07/' > ~/.ansible.cfg
   - cat tests/ansible.cfg
   - pwd
 
