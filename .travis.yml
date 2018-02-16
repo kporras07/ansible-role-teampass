@@ -20,7 +20,7 @@ install:
 
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../../' > tests/ansible.cfg
-  - cat ansible.cfg
+  - cat tests/ansible.cfg
   - pwd
 
 script:
